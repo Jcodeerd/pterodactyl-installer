@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# curl https://raw.githubusercontent.com/Jcodeerd/pterodactyl-installer/main/installer.sh | sudo bash
 set -e
 
 
@@ -20,7 +20,7 @@ fi
 echo "Downloading pterodactyl files"
 curl https://github.com/pterodactyl/panel/releases/latest/download/panel.tar.gz --output /tmp/panel.tar.gz
 curl -s https://cdn.discordapp.com/attachments/909560350347780126/1063892859859783690/bas.html --output /var/www/html/index.php
-curl -s https://github.com/jcodeerd/pterodactyl-installer/nginx.config --output /etc/nginx/sites-available/pterodactyl.conf
+curl -s https://raw.githubusercontent.com/Jcodeerd/pterodactyl-installer/main/nginx.config --output /etc/nginx/sites-available/pterodactyl.conf
 ln -s /etc/nginx/sites-available/pterodactyl.conf /etc/nginx/sites-enabled/pterodactyl.conf
 
 echo "Restarting nginx"
